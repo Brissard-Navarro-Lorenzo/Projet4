@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Balises méta indispensables -->
         <meta charset="UTF-8" />
-        <title>Nina Carducci - Photographe reconnue sur Bordeaux</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Découvrez les services de la photographe Nina Carducci : shootings, création d'albums et retouches photos. Capturez vos moments précieux avec expertise et créativité." />
+            content="Découvrez sur Bordeaux les services de la photographe Nina Carducci : shootings, création d'albums et retouches photos. Capturez vos moments précieux avec expertise et créativité." />
+        <!-- Feuilles de style -->
         <link rel="stylesheet" href="./assets/purified/bootstrap.min.css" />
         <link rel="stylesheet" href="./assets/purified/style.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet" /> -->
         <link
             rel="preload"
             href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
             as="style"
-            onload="this.onload=null;this.rel='stylesheet'" />
+            onload="this.rel='stylesheet'" />
         <!-- openGraph -->
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:language" content="fr" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Nina Carducci - Photographe professionnelle à Bordeaux" />
+        <meta property="og:title" content="Nina Carducci - Photographe Freelance sur Bordeaux" />
         <meta
             property="og:description"
             content="Shooting photo, retouches et albums personnalisés. Capturez vos plus beaux moments avec Nina Carducci." />
-        <!-- <meta property="og:image" content="https://www.ninacarducci.com/assets/images/photo-representative.jpg" /> -->
-        <!-- <meta property="og:url" content="https://www.ninacarducci.com" /> -->
-        <meta property="og:site_name" content="Photographe Nina Carducci" />
+        <meta property="og:url" content="https://brissard-navarro-lorenzo.github.io/Projet4/" />
+        <meta property="og:site_name" content="nina-carducci.github.io" />
+        <meta property="author" content="Nina Carducci" />
+        <meta property="og:image" content="https://brissard-navarro-lorenzo.github.io/Projet4/assets/images_compressees/nina/nina.webp" />
+        <meta property="og:image:alt" content="Portait de la photographe Nina Carducci" />
         <!-- Twitter Cards -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Nina Carducci - Photographe professionnelle à Bordeaux" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@ninacarducci" />
+        <meta name="twitter:creator" content="@ninacarducci" />
+        <meta name="twitter:title" content="Nina Carducci - Photographe Freelance sur Bordeaux" />
         <meta
             name="twitter:description"
             content="Shooting photo, retouches et albums personnalisés. Capturez vos plus beaux moments avec Nina Carducci." />
-        <!-- <meta name="twitter:image" content="https://www.ninacarducci.com/assets/images/photo-representative.jpg" />
-        <meta name="twitter:url" content="https://www.ninacarducci.com" /> -->
+        <meta name="twitter:image" content="https://brissard-navarro-lorenzo.github.io/Projet4/assets/images_compressees/nina/nina.webp" />
+        <meta name="twitter:image:alt" content="Portait de la photographe Nina Carducci" />
+        <meta name="twitter:url" content="https://brissard-navarro-lorenzo.github.io/Projet4/" />
+        <title>Nina Carducci - Photographe Freelance sur Bordeaux</title>
     </head>
     <body>
         <header>
@@ -59,7 +67,11 @@
                                 href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
                                 target="_blank"
                                 aria-label="Voir le profil Instagram de Nina Carducci">
-                                <img src="assets/images/instagram.png" alt="Logo du réseau Social Instagram" />
+                                <img
+                                    src="assets/images_compressees/instagram.webp"
+                                    alt="Logo du réseau Social Instagram"
+                                    width="20"
+                                    height="20" />
                             </a>
                         </li>
                     </ul>
@@ -89,14 +101,19 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img
-                                src="./assets/images_compressees/slider/homme-passage-pietons-2000.webp"
+                                src="./assets/images_compressees/slider/homme-passage-pietons.webp"
+                                width="1904"
+                                height="881"
+                                loading="eager"
                                 class="d-block w-100"
                                 alt="Homme en costume traversant un passage piéton rayé" />
                         </div>
 
                         <div class="carousel-item">
                             <img
-                                src="./assets/images_compressees/slider/foule-concert-2000.webp"
+                                src="./assets/images_compressees/slider/foule-concert.webp"
+                                width="1904"
+                                height="881"
                                 class="d-block w-100"
                                 alt="Foule enthousiaste levant les bras lors d'un concert"
                                 loading="lazy" />
@@ -104,7 +121,9 @@
 
                         <div class="carousel-item">
                             <img
-                                src="./assets/images_compressees/slider/maries-bisou-2000.webp"
+                                src="./assets/images_compressees/slider/maries-bisou.webp"
+                                width="1904"
+                                height="881"
                                 class="d-block w-100"
                                 alt="Mariés s'embrassant sous les applaudissements des invités"
                                 loading="lazy" />
@@ -124,7 +143,12 @@
         <main>
             <article id="about">
                 <div class="picture left">
-                    <img src="./assets/images_compressees/nina/nina-2000.webp" alt="Portait de la photographe Nina Carducci" />
+                    <img
+                        src="./assets/images_compressees/nina/nina.webp"
+                        alt="Portait de la photographe Nina Carducci"
+                        loading="lazy"
+                        width="555"
+                        height="555" />
                 </div>
                 <div id="about-me">
                     <h2 class="about-me__title">A propos de moi</h2>
@@ -160,53 +184,71 @@
                             data-gallery-tag="Concert"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/concert-eclairage-rouge.webp"
+                            width="440"
+                            height="440"
                             alt="Concert avec éclairage rouge et foule en délire"
                             loading="lazy" />
                         <img
                             data-gallery-tag="Entreprises"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/homme-costume.webp"
+                            width="440"
+                            height="440"
                             alt="Homme en costume avec montre au poignet"
                             loading="lazy" />
                         <img
                             data-gallery-tag="Entreprises"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/reunion-travail.webp"
+                            width="440"
+                            height="440"
                             alt="Femme souriante en réunion de travail" />
                         <img
                             data-gallery-tag="Mariages"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/mains-maries.webp"
+                            width="440"
+                            height="440"
                             alt="Mariés se tenant les mains"
                             loading="lazy" />
                         <img
                             data-gallery-tag="Portrait"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/portrait-homme-yeux-fermes.webp"
+                            width="440"
+                            height="440"
                             alt="Portrait d'un homme les yeux fermés"
                             loading="lazy" />
                         <img
                             data-gallery-tag="Mariages"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/jeunes-maries-palmier.webp"
+                            width="440"
+                            height="440"
                             alt="Couple de jeunes mariés souriants devant un palmier"
                             loading="lazy" />
                         <img
                             data-gallery-tag="Portrait"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/femme-lunettes-grillage.webp"
+                            width="440"
+                            height="440"
                             alt="Femme derrière un grillage regardant le sol"
                             loading="lazy" />
                         <img
                             data-gallery-tag="Concert"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/artiste-scene-coloree.webp"
+                            width="440"
+                            height="440"
                             alt="Artiste sur scène avec fumée colorée"
                             loading="lazy" />
                         <img
                             data-gallery-tag="Entreprises"
                             class="gallery-item"
                             src="./assets/images_compressees/gallery/rire-femme-ordinateur.webp"
+                            width="440"
+                            height="440"
                             alt="Femme riant devant son ordinateur portable"
                             loading="lazy" />
                     </div>
@@ -298,20 +340,23 @@
                     </div>
                     <div class="picture right">
                         <img
-                            src="./assets/images_compressees/camera/camera-1600.webp"
+                            src="./assets/images_compressees/camera/camera.webp"
                             alt="Appareil photo avec objectif Rokkor"
+                            width="419"
+                            height="419"
                             loading="lazy" />
                     </div>
                 </div>
             </div>
         </footer>
-        <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
+            defer
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-        <script src="./assets/purified/maugallery.min.js"></script>
-        <script src="./assets/purified/scripts.min.js"></script>
+        <script src="./assets/purified/maugallery.min.js" defer></script>
+        <script src="./assets/purified/scripts.min.js" defer></script>
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
