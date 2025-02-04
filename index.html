@@ -188,11 +188,21 @@
                                 loading="lazy" />
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev"
+                        aria-label="Image précédente">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next"
+                        aria-label="Image suivante">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
@@ -422,6 +432,8 @@
                 "@type": "LocalBusiness",
                 "name": "Nina Carducci",
                 "description": "Photographe professionnelle à Bordeaux, spécialisée dans les shootings, retouches et albums photo.",
+                "url": "https://brissard-navarro-lorenzo.github.io/Projet4/",
+                "image": "https://brissard-navarro-lorenzo.github.io/Projet4/assets/images_compressees/nina/nina-reseaux-sociaux.webp",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "68 avenue Alsace-Lorraine",
@@ -430,7 +442,14 @@
                     "addressCountry": "FR"
                 },
                 "telephone": "05 56 67 78 89",
-                "openingHours": "Du Lundi au Vendredi de 10h à 19h",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "10:00",
+                        "closes": "19:00"
+                    }
+                ],
                 "sameAs": ["https://www.instagram.com/ninacarducci.photo/?hl=fr"],
                 "priceRange": "€€",
                 "serviceOffered": [
