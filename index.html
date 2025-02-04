@@ -9,7 +9,7 @@
             content="Découvrez sur Bordeaux les services de la photographe Nina Carducci : shootings, création d'albums et retouches photos. Capturez vos moments précieux avec expertise et créativité." />
         <!-- Pas de balise robots car <meta name="robots" content="index, follow" /> est la valeur par défaut -->
         <!-- Feuilles de style -->
-        <link rel="stylesheet" href="./assets/purified/bootstrap.css" />
+        <link rel="stylesheet" href="./assets/purified/bootstrap.min.css" />
         <link rel="stylesheet" href="./assets/purified/style.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,11 +59,7 @@
                 ./assets/images_compressees/slider/homme-passage-pietons-1600.webp 1600w,
                 ./assets/images_compressees/slider/foule-concert.webp 1920w
             "
-            imagesizes="(max-width: 399px) 400px, 
-                (max-width: 799px) 800px, 
-                (max-width: 1199px) 1200px, 
-                (max-width: 1599px) 1600px,
-                1920px" />
+            imagesizes="100vw" />
     </head>
     <body>
         <header>
@@ -123,10 +119,6 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img
-                                src="./assets/images_compressees/slider/homme-passage-pietons.webp"
-                                width="1920"
-                                height="888"
-                                fetchpriority="high"
                                 srcset="
                                     ./assets/images_compressees/slider/homme-passage-pietons-400.webp   400w,
                                     ./assets/images_compressees/slider/homme-passage-pietons-800.webp   800w,
@@ -134,11 +126,11 @@
                                     ./assets/images_compressees/slider/homme-passage-pietons-1600.webp 1600w,
                                     ./assets/images_compressees/slider/homme-passage-pietons.webp      1920w
                                 "
-                                sizes="(max-width: 399px) 400px, 
-                                       (max-width: 799px) 800px, 
-                                       (max-width: 1199px) 1200px, 
-                                       (max-width: 1599px) 1600px,
-                                       1920px"
+                                sizes="100vw"
+                                src="./assets/images_compressees/slider/homme-passage-pietons.webp"
+                                width="1920"
+                                height="888"
+                                fetchpriority="high"
                                 loading="eager"
                                 class="d-block w-100"
                                 alt="Homme en costume traversant un passage piéton rayé" />
@@ -156,11 +148,7 @@
                                     ./assets/images_compressees/slider/foule-concert-1600.webp 1600w,
                                     ./assets/images_compressees/slider/foule-concert.webp      1920w
                                 "
-                                sizes="(max-width: 399px) 400px, 
-                                       (max-width: 799px) 800px, 
-                                       (max-width: 1199px) 1200px, 
-                                       (max-width: 1599px) 1600px,
-                                       1920px"
+                                sizes="100vw"
                                 class="d-block w-100"
                                 alt="Foule enthousiaste levant les bras lors d'un concert"
                                 loading="lazy" />
@@ -178,11 +166,7 @@
                                     ./assets/images_compressees/slider/maries-bisou-1600.webp 1600w,
                                     ./assets/images_compressees/slider/maries-bisou.webp      1920w
                                 "
-                                sizes="(max-width: 399px) 400px, 
-                                       (max-width: 799px) 800px, 
-                                       (max-width: 1199px) 1200px, 
-                                       (max-width: 1599px) 1600px,
-                                       1920px"
+                                sizes="100vw"
                                 class="d-block w-100"
                                 alt="Mariés s'embrassant sous les applaudissements des invités"
                                 loading="lazy" />
@@ -418,10 +402,9 @@
                 </div>
             </div>
         </footer>
-        <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="./assets/bootstrap/bootstrap.bundle.min.js" defer></script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
-            defer
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
         <script src="./assets/purified/maugallery.min.js" defer></script>
