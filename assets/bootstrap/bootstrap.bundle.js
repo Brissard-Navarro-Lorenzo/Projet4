@@ -6163,23 +6163,23 @@
             return DefaultType$2;
         } // Overrides
 
-        isWithContent() {
-            return this.getTitle() || this._getContent();
-        }
+        // isWithContent() {
+        //     return this.getTitle() || this._getContent();
+        // }
 
-        setContent(tip) {
-            this._sanitizeAndSetContent(tip, this.getTitle(), SELECTOR_TITLE);
+        // setContent(tip) {
+        //     this._sanitizeAndSetContent(tip, this.getTitle(), SELECTOR_TITLE);
 
-            this._sanitizeAndSetContent(tip, this._getContent(), SELECTOR_CONTENT);
-        } // Private
+        //     this._sanitizeAndSetContent(tip, this._getContent(), SELECTOR_CONTENT);
+        // } // Private
 
-        _getContent() {
-            return this._resolvePossibleFunction(this._config.content);
-        }
+        // _getContent() {
+        //     return this._resolvePossibleFunction(this._config.content);
+        // }
 
-        _getBasicClassPrefix() {
-            return CLASS_PREFIX;
-        } // Static
+        // _getBasicClassPrefix() {
+        //     return CLASS_PREFIX;
+        // } // Static
 
         static jQueryInterface(config) {
             return this.each(function () {
@@ -6322,96 +6322,96 @@
             return config;
         }
 
-        _getScrollTop() {
-            return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollTop;
-        }
+        // _getScrollTop() {
+        //     return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollTop;
+        // }
 
-        _getScrollHeight() {
-            return this._scrollElement.scrollHeight || Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        }
+        // _getScrollHeight() {
+        //     return this._scrollElement.scrollHeight || Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        // }
 
-        _getOffsetHeight() {
-            return this._scrollElement === window ? window.innerHeight : this._scrollElement.getBoundingClientRect().height;
-        }
+        // _getOffsetHeight() {
+        //     return this._scrollElement === window ? window.innerHeight : this._scrollElement.getBoundingClientRect().height;
+        // }
 
-        _process() {
-            const scrollTop = this._getScrollTop() + this._config.offset;
+        // _process() {
+        //     const scrollTop = this._getScrollTop() + this._config.offset;
 
-            const scrollHeight = this._getScrollHeight();
+        //     const scrollHeight = this._getScrollHeight();
 
-            const maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
+        //     const maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
 
-            if (this._scrollHeight !== scrollHeight) {
-                this.refresh();
-            }
+        //     if (this._scrollHeight !== scrollHeight) {
+        //         this.refresh();
+        //     }
 
-            if (scrollTop >= maxScroll) {
-                const target = this._targets[this._targets.length - 1];
+        //     if (scrollTop >= maxScroll) {
+        //         const target = this._targets[this._targets.length - 1];
 
-                if (this._activeTarget !== target) {
-                    this._activate(target);
-                }
+        //         if (this._activeTarget !== target) {
+        //             this._activate(target);
+        //         }
 
-                return;
-            }
+        //         return;
+        //     }
 
-            if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
-                this._activeTarget = null;
+        //     if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
+        //         this._activeTarget = null;
 
-                this._clear();
+        //         this._clear();
 
-                return;
-            }
+        //         return;
+        //     }
 
-            for (let i = this._offsets.length; i--; ) {
-                const isActiveTarget =
-                    this._activeTarget !== this._targets[i] &&
-                    scrollTop >= this._offsets[i] &&
-                    (typeof this._offsets[i + 1] === "undefined" || scrollTop < this._offsets[i + 1]);
+        //     for (let i = this._offsets.length; i--; ) {
+        //         const isActiveTarget =
+        //             this._activeTarget !== this._targets[i] &&
+        //             scrollTop >= this._offsets[i] &&
+        //             (typeof this._offsets[i + 1] === "undefined" || scrollTop < this._offsets[i + 1]);
 
-                if (isActiveTarget) {
-                    this._activate(this._targets[i]);
-                }
-            }
-        }
+        //         if (isActiveTarget) {
+        //             this._activate(this._targets[i]);
+        //         }
+        //     }
+        // }
 
-        _activate(target) {
-            this._activeTarget = target;
+        // _activate(target) {
+        //     this._activeTarget = target;
 
-            this._clear();
+        //     this._clear();
 
-            const queries = SELECTOR_LINK_ITEMS.split(",").map(
-                (selector) => `${selector}[data-bs-target="${target}"],${selector}[href="${target}"]`
-            );
-            const link = SelectorEngine.findOne(queries.join(","), this._config.target);
-            link.classList.add(CLASS_NAME_ACTIVE$1);
+        //     const queries = SELECTOR_LINK_ITEMS.split(",").map(
+        //         (selector) => `${selector}[data-bs-target="${target}"],${selector}[href="${target}"]`
+        //     );
+        //     const link = SelectorEngine.findOne(queries.join(","), this._config.target);
+        //     link.classList.add(CLASS_NAME_ACTIVE$1);
 
-            if (link.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {
-                SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, link.closest(SELECTOR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
-            } else {
-                SelectorEngine.parents(link, SELECTOR_NAV_LIST_GROUP$1).forEach((listGroup) => {
-                    // Set triggered links parents as active
-                    // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-                    SelectorEngine.prev(listGroup, `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`).forEach((item) =>
-                        item.classList.add(CLASS_NAME_ACTIVE$1)
-                    ); // Handle special case when .nav-link is inside .nav-item
+        //     if (link.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {
+        //         SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, link.closest(SELECTOR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
+        //     } else {
+        //         SelectorEngine.parents(link, SELECTOR_NAV_LIST_GROUP$1).forEach((listGroup) => {
+        //             // Set triggered links parents as active
+        //             // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+        //             SelectorEngine.prev(listGroup, `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`).forEach((item) =>
+        //                 item.classList.add(CLASS_NAME_ACTIVE$1)
+        //             ); // Handle special case when .nav-link is inside .nav-item
 
-                    SelectorEngine.prev(listGroup, SELECTOR_NAV_ITEMS).forEach((navItem) => {
-                        SelectorEngine.children(navItem, SELECTOR_NAV_LINKS).forEach((item) => item.classList.add(CLASS_NAME_ACTIVE$1));
-                    });
-                });
-            }
+        //             SelectorEngine.prev(listGroup, SELECTOR_NAV_ITEMS).forEach((navItem) => {
+        //                 SelectorEngine.children(navItem, SELECTOR_NAV_LINKS).forEach((item) => item.classList.add(CLASS_NAME_ACTIVE$1));
+        //             });
+        //         });
+        //     }
 
-            EventHandler.trigger(this._scrollElement, EVENT_ACTIVATE, {
-                relatedTarget: target,
-            });
-        }
+        //     EventHandler.trigger(this._scrollElement, EVENT_ACTIVATE, {
+        //         relatedTarget: target,
+        //     });
+        // }
 
-        _clear() {
-            SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target)
-                .filter((node) => node.classList.contains(CLASS_NAME_ACTIVE$1))
-                .forEach((node) => node.classList.remove(CLASS_NAME_ACTIVE$1));
-        } // Static
+        // _clear() {
+        //     SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target)
+        //         .filter((node) => node.classList.contains(CLASS_NAME_ACTIVE$1))
+        //         .forEach((node) => node.classList.remove(CLASS_NAME_ACTIVE$1));
+        // } // Static
 
         static jQueryInterface(config) {
             return this.each(function () {
@@ -6491,124 +6491,124 @@
             return NAME$1;
         } // Public
 
-        show() {
-            if (
-                this._element.parentNode &&
-                this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
-                this._element.classList.contains(CLASS_NAME_ACTIVE)
-            ) {
-                return;
-            }
+        // show() {
+        //     if (
+        //         this._element.parentNode &&
+        //         this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
+        //         this._element.classList.contains(CLASS_NAME_ACTIVE)
+        //     ) {
+        //         return;
+        //     }
 
-            let previous;
-            const target = getElementFromSelector(this._element);
+        //     let previous;
+        //     const target = getElementFromSelector(this._element);
 
-            const listElement = this._element.closest(SELECTOR_NAV_LIST_GROUP);
+        //     const listElement = this._element.closest(SELECTOR_NAV_LIST_GROUP);
 
-            if (listElement) {
-                const itemSelector = listElement.nodeName === "UL" || listElement.nodeName === "OL" ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE;
-                previous = SelectorEngine.find(itemSelector, listElement);
-                previous = previous[previous.length - 1];
-            }
+        //     if (listElement) {
+        //         const itemSelector = listElement.nodeName === "UL" || listElement.nodeName === "OL" ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE;
+        //         previous = SelectorEngine.find(itemSelector, listElement);
+        //         previous = previous[previous.length - 1];
+        //     }
 
-            const hideEvent = previous
-                ? EventHandler.trigger(previous, EVENT_HIDE$1, {
-                      relatedTarget: this._element,
-                  })
-                : null;
-            const showEvent = EventHandler.trigger(this._element, EVENT_SHOW$1, {
-                relatedTarget: previous,
-            });
+        //     const hideEvent = previous
+        //         ? EventHandler.trigger(previous, EVENT_HIDE$1, {
+        //               relatedTarget: this._element,
+        //           })
+        //         : null;
+        //     const showEvent = EventHandler.trigger(this._element, EVENT_SHOW$1, {
+        //         relatedTarget: previous,
+        //     });
 
-            if (showEvent.defaultPrevented || (hideEvent !== null && hideEvent.defaultPrevented)) {
-                return;
-            }
+        //     if (showEvent.defaultPrevented || (hideEvent !== null && hideEvent.defaultPrevented)) {
+        //         return;
+        //     }
 
-            this._activate(this._element, listElement);
+        //     this._activate(this._element, listElement);
 
-            const complete = () => {
-                EventHandler.trigger(previous, EVENT_HIDDEN$1, {
-                    relatedTarget: this._element,
-                });
-                EventHandler.trigger(this._element, EVENT_SHOWN$1, {
-                    relatedTarget: previous,
-                });
-            };
+        //     const complete = () => {
+        //         EventHandler.trigger(previous, EVENT_HIDDEN$1, {
+        //             relatedTarget: this._element,
+        //         });
+        //         EventHandler.trigger(this._element, EVENT_SHOWN$1, {
+        //             relatedTarget: previous,
+        //         });
+        //     };
 
-            if (target) {
-                this._activate(target, target.parentNode, complete);
-            } else {
-                complete();
-            }
-        } // Private
+        //     if (target) {
+        //         this._activate(target, target.parentNode, complete);
+        //     } else {
+        //         complete();
+        //     }
+        // } // Private
 
-        _activate(element, container, callback) {
-            const activeElements =
-                container && (container.nodeName === "UL" || container.nodeName === "OL")
-                    ? SelectorEngine.find(SELECTOR_ACTIVE_UL, container)
-                    : SelectorEngine.children(container, SELECTOR_ACTIVE);
-            const active = activeElements[0];
-            const isTransitioning = callback && active && active.classList.contains(CLASS_NAME_FADE$1);
+        // _activate(element, container, callback) {
+        //     const activeElements =
+        //         container && (container.nodeName === "UL" || container.nodeName === "OL")
+        //             ? SelectorEngine.find(SELECTOR_ACTIVE_UL, container)
+        //             : SelectorEngine.children(container, SELECTOR_ACTIVE);
+        //     const active = activeElements[0];
+        //     const isTransitioning = callback && active && active.classList.contains(CLASS_NAME_FADE$1);
 
-            const complete = () => this._transitionComplete(element, active, callback);
+        //     const complete = () => this._transitionComplete(element, active, callback);
 
-            if (active && isTransitioning) {
-                active.classList.remove(CLASS_NAME_SHOW$1);
+        //     if (active && isTransitioning) {
+        //         active.classList.remove(CLASS_NAME_SHOW$1);
 
-                this._queueCallback(complete, element, true);
-            } else {
-                complete();
-            }
-        }
+        //         this._queueCallback(complete, element, true);
+        //     } else {
+        //         complete();
+        //     }
+        // }
 
-        _transitionComplete(element, active, callback) {
-            if (active) {
-                active.classList.remove(CLASS_NAME_ACTIVE);
-                const dropdownChild = SelectorEngine.findOne(SELECTOR_DROPDOWN_ACTIVE_CHILD, active.parentNode);
+        // _transitionComplete(element, active, callback) {
+        //     if (active) {
+        //         active.classList.remove(CLASS_NAME_ACTIVE);
+        //         const dropdownChild = SelectorEngine.findOne(SELECTOR_DROPDOWN_ACTIVE_CHILD, active.parentNode);
 
-                if (dropdownChild) {
-                    dropdownChild.classList.remove(CLASS_NAME_ACTIVE);
-                }
+        //         if (dropdownChild) {
+        //             dropdownChild.classList.remove(CLASS_NAME_ACTIVE);
+        //         }
 
-                if (active.getAttribute("role") === "tab") {
-                    active.setAttribute("aria-selected", false);
-                }
-            }
+        //         if (active.getAttribute("role") === "tab") {
+        //             active.setAttribute("aria-selected", false);
+        //         }
+        //     }
 
-            element.classList.add(CLASS_NAME_ACTIVE);
+        //     element.classList.add(CLASS_NAME_ACTIVE);
 
-            if (element.getAttribute("role") === "tab") {
-                element.setAttribute("aria-selected", true);
-            }
+        //     if (element.getAttribute("role") === "tab") {
+        //         element.setAttribute("aria-selected", true);
+        //     }
 
-            reflow(element);
+        //     reflow(element);
 
-            if (element.classList.contains(CLASS_NAME_FADE$1)) {
-                element.classList.add(CLASS_NAME_SHOW$1);
-            }
+        //     if (element.classList.contains(CLASS_NAME_FADE$1)) {
+        //         element.classList.add(CLASS_NAME_SHOW$1);
+        //     }
 
-            let parent = element.parentNode;
+        //     let parent = element.parentNode;
 
-            if (parent && parent.nodeName === "LI") {
-                parent = parent.parentNode;
-            }
+        //     if (parent && parent.nodeName === "LI") {
+        //         parent = parent.parentNode;
+        //     }
 
-            if (parent && parent.classList.contains(CLASS_NAME_DROPDOWN_MENU)) {
-                const dropdownElement = element.closest(SELECTOR_DROPDOWN);
+        //     if (parent && parent.classList.contains(CLASS_NAME_DROPDOWN_MENU)) {
+        //         const dropdownElement = element.closest(SELECTOR_DROPDOWN);
 
-                if (dropdownElement) {
-                    SelectorEngine.find(SELECTOR_DROPDOWN_TOGGLE, dropdownElement).forEach((dropdown) =>
-                        dropdown.classList.add(CLASS_NAME_ACTIVE)
-                    );
-                }
+        //         if (dropdownElement) {
+        //             SelectorEngine.find(SELECTOR_DROPDOWN_TOGGLE, dropdownElement).forEach((dropdown) =>
+        //                 dropdown.classList.add(CLASS_NAME_ACTIVE)
+        //             );
+        //         }
 
-                element.setAttribute("aria-expanded", true);
-            }
+        //         element.setAttribute("aria-expanded", true);
+        //     }
 
-            if (callback) {
-                callback();
-            }
-        } // Static
+        //     if (callback) {
+        //         callback();
+        //     }
+        // } // Static
 
         static jQueryInterface(config) {
             return this.each(function () {
@@ -6718,137 +6718,137 @@
             return NAME;
         } // Public
 
-        show() {
-            const showEvent = EventHandler.trigger(this._element, EVENT_SHOW);
+        // show() {
+        //     const showEvent = EventHandler.trigger(this._element, EVENT_SHOW);
 
-            if (showEvent.defaultPrevented) {
-                return;
-            }
+        //     if (showEvent.defaultPrevented) {
+        //         return;
+        //     }
 
-            this._clearTimeout();
+        //     this._clearTimeout();
 
-            if (this._config.animation) {
-                this._element.classList.add(CLASS_NAME_FADE);
-            }
+        //     if (this._config.animation) {
+        //         this._element.classList.add(CLASS_NAME_FADE);
+        //     }
 
-            const complete = () => {
-                this._element.classList.remove(CLASS_NAME_SHOWING);
+        //     const complete = () => {
+        //         this._element.classList.remove(CLASS_NAME_SHOWING);
 
-                EventHandler.trigger(this._element, EVENT_SHOWN);
+        //         EventHandler.trigger(this._element, EVENT_SHOWN);
 
-                this._maybeScheduleHide();
-            };
+        //         this._maybeScheduleHide();
+        //     };
 
-            this._element.classList.remove(CLASS_NAME_HIDE); // @deprecated
+        //     this._element.classList.remove(CLASS_NAME_HIDE); // @deprecated
 
-            reflow(this._element);
+        //     reflow(this._element);
 
-            this._element.classList.add(CLASS_NAME_SHOW);
+        //     this._element.classList.add(CLASS_NAME_SHOW);
 
-            this._element.classList.add(CLASS_NAME_SHOWING);
+        //     this._element.classList.add(CLASS_NAME_SHOWING);
 
-            this._queueCallback(complete, this._element, this._config.animation);
-        }
+        //     this._queueCallback(complete, this._element, this._config.animation);
+        // }
 
-        hide() {
-            if (!this._element.classList.contains(CLASS_NAME_SHOW)) {
-                return;
-            }
+        // hide() {
+        //     if (!this._element.classList.contains(CLASS_NAME_SHOW)) {
+        //         return;
+        //     }
 
-            const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE);
+        //     const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE);
 
-            if (hideEvent.defaultPrevented) {
-                return;
-            }
+        //     if (hideEvent.defaultPrevented) {
+        //         return;
+        //     }
 
-            const complete = () => {
-                this._element.classList.add(CLASS_NAME_HIDE); // @deprecated
+        //     const complete = () => {
+        //         this._element.classList.add(CLASS_NAME_HIDE); // @deprecated
 
-                this._element.classList.remove(CLASS_NAME_SHOWING);
+        //         this._element.classList.remove(CLASS_NAME_SHOWING);
 
-                this._element.classList.remove(CLASS_NAME_SHOW);
+        //         this._element.classList.remove(CLASS_NAME_SHOW);
 
-                EventHandler.trigger(this._element, EVENT_HIDDEN);
-            };
+        //         EventHandler.trigger(this._element, EVENT_HIDDEN);
+        //     };
 
-            this._element.classList.add(CLASS_NAME_SHOWING);
+        //     this._element.classList.add(CLASS_NAME_SHOWING);
 
-            this._queueCallback(complete, this._element, this._config.animation);
-        }
+        //     this._queueCallback(complete, this._element, this._config.animation);
+        // }
 
-        dispose() {
-            this._clearTimeout();
+        // dispose() {
+        //     this._clearTimeout();
 
-            if (this._element.classList.contains(CLASS_NAME_SHOW)) {
-                this._element.classList.remove(CLASS_NAME_SHOW);
-            }
+        //     if (this._element.classList.contains(CLASS_NAME_SHOW)) {
+        //         this._element.classList.remove(CLASS_NAME_SHOW);
+        //     }
 
-            super.dispose();
-        } // Private
+        //     super.dispose();
+        // } // Private
 
-        _getConfig(config) {
-            config = {
-                ...Default,
-                ...Manipulator.getDataAttributes(this._element),
-                ...(typeof config === "object" && config ? config : {}),
-            };
-            typeCheckConfig(NAME, config, this.constructor.DefaultType);
-            return config;
-        }
+        // _getConfig(config) {
+        //     config = {
+        //         ...Default,
+        //         ...Manipulator.getDataAttributes(this._element),
+        //         ...(typeof config === "object" && config ? config : {}),
+        //     };
+        //     typeCheckConfig(NAME, config, this.constructor.DefaultType);
+        //     return config;
+        // }
 
-        _maybeScheduleHide() {
-            if (!this._config.autohide) {
-                return;
-            }
+        // _maybeScheduleHide() {
+        //     if (!this._config.autohide) {
+        //         return;
+        //     }
 
-            if (this._hasMouseInteraction || this._hasKeyboardInteraction) {
-                return;
-            }
+        //     if (this._hasMouseInteraction || this._hasKeyboardInteraction) {
+        //         return;
+        //     }
 
-            this._timeout = setTimeout(() => {
-                this.hide();
-            }, this._config.delay);
-        }
+        //     this._timeout = setTimeout(() => {
+        //         this.hide();
+        //     }, this._config.delay);
+        // }
 
-        _onInteraction(event, isInteracting) {
-            switch (event.type) {
-                case "mouseover":
-                case "mouseout":
-                    this._hasMouseInteraction = isInteracting;
-                    break;
+        // _onInteraction(event, isInteracting) {
+        //     switch (event.type) {
+        //         case "mouseover":
+        //         case "mouseout":
+        //             this._hasMouseInteraction = isInteracting;
+        //             break;
 
-                case "focusin":
-                case "focusout":
-                    this._hasKeyboardInteraction = isInteracting;
-                    break;
-            }
+        //         case "focusin":
+        //         case "focusout":
+        //             this._hasKeyboardInteraction = isInteracting;
+        //             break;
+        //     }
 
-            if (isInteracting) {
-                this._clearTimeout();
+        //     if (isInteracting) {
+        //         this._clearTimeout();
 
-                return;
-            }
+        //         return;
+        //     }
 
-            const nextElement = event.relatedTarget;
+        //     const nextElement = event.relatedTarget;
 
-            if (this._element === nextElement || this._element.contains(nextElement)) {
-                return;
-            }
+        //     if (this._element === nextElement || this._element.contains(nextElement)) {
+        //         return;
+        //     }
 
-            this._maybeScheduleHide();
-        }
+        //     this._maybeScheduleHide();
+        // }
 
-        _setListeners() {
-            EventHandler.on(this._element, EVENT_MOUSEOVER, (event) => this._onInteraction(event, true));
-            EventHandler.on(this._element, EVENT_MOUSEOUT, (event) => this._onInteraction(event, false));
-            EventHandler.on(this._element, EVENT_FOCUSIN, (event) => this._onInteraction(event, true));
-            EventHandler.on(this._element, EVENT_FOCUSOUT, (event) => this._onInteraction(event, false));
-        }
+        // _setListeners() {
+        //     EventHandler.on(this._element, EVENT_MOUSEOVER, (event) => this._onInteraction(event, true));
+        //     EventHandler.on(this._element, EVENT_MOUSEOUT, (event) => this._onInteraction(event, false));
+        //     EventHandler.on(this._element, EVENT_FOCUSIN, (event) => this._onInteraction(event, true));
+        //     EventHandler.on(this._element, EVENT_FOCUSOUT, (event) => this._onInteraction(event, false));
+        // }
 
-        _clearTimeout() {
-            clearTimeout(this._timeout);
-            this._timeout = null;
-        } // Static
+        // _clearTimeout() {
+        //     clearTimeout(this._timeout);
+        //     this._timeout = null;
+        // } // Static
 
         static jQueryInterface(config) {
             return this.each(function () {
