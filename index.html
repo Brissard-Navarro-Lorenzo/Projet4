@@ -198,12 +198,15 @@
         <main>
             <article id="about">
                 <div class="picture left">
-                    <img
-                        src="./assets/images_compressees/nina/nina.webp"
-                        width="555"
-                        height="555"
-                        alt="Portait de la photographe Nina Carducci"
-                        loading="lazy" />
+                    <picture>
+                        <source srcset="./assets/images_compressees/nina/nina-400.webp" media="(max-width: 400px)" />
+                        <img
+                            src="./assets/images_compressees/nina/nina.webp"
+                            width="555"
+                            height="555"
+                            alt="Portrait de la photographe Nina Carducci"
+                            loading="lazy" />
+                    </picture>
                 </div>
                 <div id="about-me">
                     <h2 class="about-me__title">A propos de moi</h2>
