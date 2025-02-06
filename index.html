@@ -439,28 +439,46 @@
                 ],
                 "sameAs": ["https://www.instagram.com/ninacarducci.photo/?hl=fr"],
                 "priceRange": "€€",
-                "serviceOffered": [
+                "makesOffer": [
                     {
-                        "@type": "Service",
-                        "name": "Shooting photo",
-                        "description": "Séance photo professionnelle avec matériel et déplacement inclus.",
-                        "price": "350€",
-                        "priceCurrency": "EUR",
-                        "duration": "Demi journée"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Shooting photo",
+                            "description": "Séance photo professionnelle avec matériel et déplacement inclus."
+                        },
+                        "priceSpecification": {
+                            "@type": "PriceSpecification",
+                            "price": 350,
+                            "priceCurrency": "EUR",
+                            "duration": "Demi-journée"
+                        }
                     },
                     {
-                        "@type": "Service",
-                        "name": "Retouches photo",
-                        "description": "Retouches professionnelles avec 2 allers-retours par photo.",
-                        "price": "50€",
-                        "priceCurrency": "EUR"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Retouches photo",
+                            "description": "Retouches professionnelles avec 2 allers-retours par photo."
+                        },
+                        "priceSpecification": {
+                            "@type": "PriceSpecification",
+                            "price": 50,
+                            "priceCurrency": "EUR"
+                        }
                     },
                     {
-                        "@type": "Service",
-                        "name": "Album photo A4",
-                        "description": "Album photo A4 de 30 pages recto/verso.",
-                        "price": "400€",
-                        "priceCurrency": "EUR"
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Album photo A4",
+                            "description": "Album photo A4 de 30 pages recto/verso."
+                        },
+                        "priceSpecification": {
+                            "@type": "PriceSpecification",
+                            "price": 400,
+                            "priceCurrency": "EUR"
+                        }
                     }
                 ]
             }
